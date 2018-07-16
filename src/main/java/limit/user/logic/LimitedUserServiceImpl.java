@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service(value = "LimitedUserServiceImpl")
 public class LimitedUserServiceImpl implements LimitUserService {
-	public static final Long LIMIT_COUNT = 1000L;
+	public static final Long LIMIT_COUNT = 10000L;
 	
 	private LimitedUserRepository limitedUserRepository;
 	

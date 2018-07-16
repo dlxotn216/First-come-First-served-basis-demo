@@ -37,7 +37,7 @@ public class LimitedUserServiceImplByIsolationControlTest {
 		completableFutures.forEach(CompletableFuture::join);
 		System.out.println("Finished");
 		
-		assertThat(service.getLimittedUserTotalCount()).isEqualTo(LimitedUserServiceImpl.LIMIT_COUNT);
+		assertThat(service.getLimittedUserTotalCount()).isEqualTo(LimitedUserServiceByIsolationControl.LIMIT_COUNT);
 	}
 	
 }
