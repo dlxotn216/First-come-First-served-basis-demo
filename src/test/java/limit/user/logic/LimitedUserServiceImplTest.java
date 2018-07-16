@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -32,7 +33,7 @@ public class LimitedUserServiceImplTest {
 					while(!service.isFinished()) {
 						service.addLimitedUser();
 					}
-				}))
+				}, Executors.newFixedThreadPool(30)))
 				.collect(Collectors.toList());
 		
 		completableFutures.forEach(CompletableFuture::join);
